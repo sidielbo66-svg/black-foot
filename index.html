@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07110d">
+<title>BLACK FOOT | كرة القدم</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#07110d;color:#f5fff8;font-family:Arial,sans-serif}
+header{padding:22px 18px;background:#0c1d14;border-bottom:1px solid #245338}
+h1{margin:0;color:#62e89b;font-size:27px}
+header p{margin:8px 0 0;color:#c4d8ca}
+nav{display:flex;gap:8px;padding:12px;overflow:auto}
+button{font-size:15px;border:1px solid #315541;border-radius:10px;padding:11px 14px;background:#10271a;color:white}
+button.active{background:#1b7545;border-color:#1b7545}
+main{padding:14px}
+h2{font-size:20px}
+.card{background:#102017;border:1px solid #244832;border-radius:14px;padding:15px;margin:12px 0}
+.muted{color:#b8cabe;font-size:14px}
+.score{font-size:22px;font-weight:bold;color:#72efa5;text-align:center;margin:12px}
+.tag{color:#72efa5;font-size:12px}
+footer{text-align:center;padding:28px 12px;color:#9ab4a2}
+</style>
+</head>
+<body>
+<header><h1>👑 BLACK FOOT ⚽</h1><p>الكرة الموريتانية والعالمية 🇲🇷🌍</p></header>
+<nav>
+<button class="active" onclick="showTab('home',this)">الرئيسية</button>
+<button onclick="showTab('matches',this)">المباريات</button>
+<button onclick="showTab('mauritania',this)">موريتانيا 🇲🇷</button>
+<button onclick="showTab('news',this)">الأخبار</button>
+</nav>
+<main id="content">
+<h2>أهلاً بك في BLACK FOOT</h2>
+<div class="card"><span class="tag">مرحبًا بك</span><h3>عالم كرة القدم بين يديك</h3><p class="muted">أخبار موريتانيا والعالم، ومواعيد المباريات ونتائجها في مكان واحد.</p></div>
+<div class="card"><h3>🇲🇷 الكرة الموريتانية</h3><p class="muted">أخبار المنتخب الوطني والدوري المحلي.</p></div>
+<div class="card"><h3>🌍 الكرة العالمية</h3><p class="muted">تابع آخر أخبار الفرق والبطولات العالمية.</p></div>
+</main>
+<footer>BLACK FOOT © 2026 · شغف كرة القدم ⚽</footer>
+<script>
+function showTab(tab,btn){
+document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+const c=document.getElementById('content');
+const pages={
+home:'<h2>أهلاً بك في BLACK FOOT</h2><div class="card"><h3>كرة القدم بين يديك ⚽</h3><p class="muted">أخبار ونتائج الكرة الموريتانية والعالمية.</p></div>',
+matches:'<h2>المباريات والنتائج</h2><div class="card"><p>لا توجد بيانات مباشرة متصلة حتى الآن.</p><p class="muted">سنضيف مصدر النتائج الآلي في مرحلة لاحقة.</p></div>',
+mauritania:'<h2>الكرة الموريتانية 🇲🇷</h2><div class="card"><p>المنتخب الوطني والدوري الموريتاني.</p><p class="muted">ستظهر هنا الأخبار والنتائج بعد إضافتها.</p></div>',
+news:'<h2>آخر الأخبار 📰</h2><div class="card"><p>لم تُنشر أخبار بعد.</p><p class="muted">ستُضاف لوحة نشر آمنة في مرحلة لاحقة.</p></div>'
+};
+c.innerHTML=pages[tab];
+}
+</script>
+</body>
+</html>
